@@ -21,9 +21,6 @@ export const renderGallery = (images) => {
 </a>`;
     })
     .join('');
-
-  console.log(markupGallery);
-  gallery.insertAdjacentHTML('beforeend', markup);
-  lightbox.refresh();
+ 
   return markupGallery;
 }

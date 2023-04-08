@@ -9,12 +9,6 @@ export const fetchPictures = async (value, page) => {
       return response.data;
     }
     
-    catch(error) {
-        console.error(error);
-        Notiflix.Notify.warning("Sorry, there are no images matching your search query. Please try again.");
-        
-  };
-}
-
-
-
+    catch(error) { 
+      Notiflix.Notify.warning("Sorry, there are no images matching your search query. Please try again.")  
+  };}
