@@ -1,4 +1,4 @@
-export const renderGallery = () => {
+export const renderGallery = (images) => {
   const markupGallery = images
     .map(image => {
       return `
@@ -22,7 +22,8 @@ export const renderGallery = () => {
     })
     .join('');
 
-  gallery.innerHTML(markupGallery);
-
+  console.log(markupGallery);
+  gallery.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
+  return markupGallery;
 }
