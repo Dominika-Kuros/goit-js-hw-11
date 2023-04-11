@@ -41,7 +41,9 @@ searchForm.addEventListener('submit', async e => {
   }
 });
 
-searchForm.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+// searchForm.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+// preventDefault();
+
 
 
 
