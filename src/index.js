@@ -9,11 +9,10 @@ import debounce from 'lodash.debounce';
 const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const searchInput = document.querySelector('input.input');
-const loadMoreButton = document.querySelector('.load-more');
 const lightbox = new SimpleLightbox('.gallery a');
 let page = 1;
 let perPage = 40;
-let value = '';
+// let value = '';
 
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
@@ -43,68 +42,8 @@ searchForm.addEventListener('submit', async e => {
 });
 
 searchForm.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-// ------------------------------------------------------------------------
 
-// loadMoreButton.addEventListener(
-//   'click',
-//   () =>
-//     function onLoadMoreBtn() {
-//       page += 1;
-//       fetchPictures(value, page, (perPage = 40))
-//         .then(data => {
-//           renderGallery(data.hits, gallery);
-//           lightbox.refresh();
-//           const totalPages = Math.ceil(data.totalHits / perPage);
-//           if (page > totalPages) {
-//             loadMore.classList.add('is-hidden');
-//             Notiflix.Notify.failure(
-//               "We're sorry, but you've reached the end of search results."
-//             );
-//           }
-//           if (data.totalHits > perPage) {
-//             loadMore.classList.remove('is-hidden');
-//           }
-//         })
-//         .catch(error => console.log(error));
-//     }
-// );
 
-// function loadImages(numImages = 40) {
-//   let i = 0;
-//   while (i < numImages) {
-//     fetchPictures(searchInput.value, page).then(data => {
-//       renderGallery(data.hits);
-//       i++;
-//       page++;
-//     });
-//   }
-// }
-
-// loadImages();
-
-// window.addEventListener('scroll', () => {
-//   console.log(window.scrollY); //scrolled from top
-//   console.log(window.innerHeight); //visible part of screen
-//   if (
-//     window.scrollY + window.innerHeight >=
-//     document.documentElement.scrollHeight
-//   ) {
-//     loadImages();
-//   }
-// });
-
-// window.addEventListener('scroll', async () => {
-//   if (
-//     window.scrollY + window.innerHeight >=
-//     document.documentElement.scrollHeight
-//   ) {
-//     const fetchScroll = await fetchPictures(data);
-//     page++;
-//     renderGallery(data.hits);
-//     lightbox.refresh();
-//     return fetchScroll;
-//   }
-// });
 
 window.addEventListener(
   'scroll',
