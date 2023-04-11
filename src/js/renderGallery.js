@@ -1,4 +1,4 @@
-export const renderGallery = (images) => {
+export const renderGallery = images => {
   const markupGallery = images
     .map(image => {
       return `
@@ -21,6 +21,6 @@ export const renderGallery = (images) => {
 </a>`;
     })
     .join('');
- 
+
   return markupGallery;
-}
+};
